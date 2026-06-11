@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Turnkey Construction | Rajesh Reddy Estates</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Secure turnkey building services: custom villa construction, commercial buildings, renovation layouts, MEP planning, and foundation engineering by Rajesh Reddy.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Global Header -->
+  <header class="header sticky">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo-link interactive-item">
+        <svg class="logo-icon" viewBox="0 0 100 100">
+          <path d="M50 15 L62 38 L88 38 L68 54 L75 80 L50 65 L25 80 L32 54 L12 38 L38 38 Z" fill="#D4AF37" />
+        </svg>
+        <span class="logo-text">RAJESH <span>REDDY</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="layouts.html" class="nav-link">Layouts</a></li>
+          <li class="nav-item active"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="testimonials.html" class="nav-link">Reviews</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-gold-outline interactive-item" style="padding: 1rem 2.2rem; font-size: 1.2rem;">Owner Desk</a>
+        <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="section" style="padding: 14rem 0 6rem 0; background-color: var(--color-dark-gray); border-bottom: 1px solid var(--border-glass);">
+    <div class="container">
+      <div class="section-title-wrapper left-align" style="margin-bottom: 0;">
+        <span class="section-subtitle">PILLAR THREE</span>
+        <h1 class="section-title" style="font-size: 5rem;">Turnkey Construction</h1>
+        <div class="title-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Timeline Section -->
+  <section class="section">
+    <div class="container">
+      
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">OUR TIMELINE</span>
+        <h2 class="section-title">Step-by-Step Construction Stages</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1.5fr; gap:6rem;">
+        
+        <!-- Left Column: Interactive Stages list -->
+        <div class="reveal reveal-fade-right" style="display:flex; flex-direction:column; gap:1.5rem;">
+          <button class="btn btn-secondary timeline-stage-btn active" data-stage="1" style="text-align:left; justify-content:flex-start;">
+            <span style="color:var(--color-gold); font-size:2rem; font-family:var(--font-headings); margin-right:1.5rem;">01</span>
+            Planning & Architecture
+          </button>
+          <button class="btn btn-secondary timeline-stage-btn" data-stage="2" style="text-align:left; justify-content:flex-start;">
+            <span style="color:var(--color-gold); font-size:2rem; font-family:var(--font-headings); margin-right:1.5rem;">02</span>
+            Soil Analysis & Foundation
+          </button>
+          <button class="btn btn-secondary timeline-stage-btn" data-stage="3" style="text-align:left; justify-content:flex-start;">
+            <span style="color:var(--color-gold); font-size:2rem; font-family:var(--font-headings); margin-right:1.5rem;">03</span>
+            Superstructure RCC Framing
+          </button>
+          <button class="btn btn-secondary timeline-stage-btn" data-stage="4" style="text-align:left; justify-content:flex-start;">
+            <span style="color:var(--color-gold); font-size:2rem; font-family:var(--font-headings); margin-right:1.5rem;">04</span>
+            MEP & Brick masonry
+          </button>
+          <button class="btn btn-secondary timeline-stage-btn" data-stage="5" style="text-align:left; justify-content:flex-start;">
+            <span style="color:var(--color-gold); font-size:2rem; font-family:var(--font-headings); margin-right:1.5rem;">05</span>
+            Plastering & Fine Finishes
+          </button>
+          <button class="btn btn-secondary timeline-stage-btn" data-stage="6" style="text-align:left; justify-content:flex-start;">
+            <span style="color:var(--color-gold); font-size:2rem; font-family:var(--font-headings); margin-right:1.5rem;">06</span>
+            Occ-Cert & Key Handover
+          </button>
+        </div>
+
+        <!-- Right Column: Stage Description display -->
+        <div class="reveal reveal-fade-left" id="timeline-detail-box" style="
+          background: var(--bg-glass);
+          border: 1px solid var(--border-glass-gold);
+          padding: 5rem;
+          min-height: 380px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        ">
+          <!-- Populated by inline JavaScript stage mapping -->
+          <h3 style="font-family:var(--font-headings); font-size:3rem; color:var(--color-gold); margin-bottom:1.5rem;">01. Architectural Planning & 3D Blueprints</h3>
+          <p style="font-size:1.6rem; color:var(--color-silver); line-height:1.8;">
+            We start by creating custom 2D floor plans and 3D architectural renders of your residence. We outline the layout orientation based on Vaastu rules, natural lighting, and calculate structural estimation costs.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Materials Quality Specification -->
+  <section class="section" style="background-color: var(--color-dark-gray); border-top: 1px solid var(--border-glass);">
+    <div class="container">
+      
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">SPECIFICATION DETAILS</span>
+        <h2 class="section-title">Uncompromising Quality Materials</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <!-- Materials List -->
+      <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 4rem;">
+        
+        <div class="reveal reveal-fade-up delay-1" style="background:var(--bg-glass); border: 1px solid var(--border-glass); padding:4rem;">
+          <h4 style="font-family:var(--font-headings); font-size:2.2rem; color:var(--color-gold); border-bottom:1px solid var(--border-glass); padding-bottom:1.5rem; margin-bottom:2rem;">Core Foundations</h4>
+          <div style="display:flex; flex-direction:column; gap:1.5rem; font-size:1.4rem;">
+            <div style="display:flex; justify-content:space-between;"><span>Steel reinforcement</span><strong>Tata Tiscon TMT Fe-550D Grade</strong></div>
+            <div style="display:flex; justify-content:space-between;"><span>Cement brand</span><strong>Ultratech Premium / ACC Concrete</strong></div>
+            <div style="display:flex; justify-content:space-between;"><span>Concrete mix</span><strong>Ready-Mix M25 Grade</strong></div>
+            <div style="display:flex; justify-content:space-between;"><span>External bricks</span><strong>Solid red wire-cut clay bricks (9")</strong></div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-fade-up delay-2" style="background:var(--bg-glass); border: 1px solid var(--border-glass); padding:4rem;">
+          <h4 style="font-family:var(--font-headings); font-size:2.2rem; color:var(--color-gold); border-bottom:1px solid var(--border-glass); padding-bottom:1.5rem; margin-bottom:2rem;">Plumbing, Wiring & Finishes</h4>
+          <div style="display:flex; flex-direction:column; gap:1.5rem; font-size:1.4rem;">
+            <div style="display:flex; justify-content:space-between;"><span>Electrical conduits</span><strong>Finolex wires, Legrand switch nodes</strong></div>
+            <div style="display:flex; justify-content:space-between;"><span>Internal piping</span><strong>Ashirvad CPVC & PVC conduits</strong></div>
+            <div style="display:flex; justify-content:space-between;"><span>Sanitary hardware</span><strong>Jaquar / Kohler Art deco series</strong></div>
+            <div style="display:flex; justify-content:space-between;"><span>Flooring marble</span><strong>Premium Italian Botticino (18mm)</strong></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Construction consultation request -->
+  <section class="section">
+    <div class="container" style="max-width: 800px;">
+      
+      <div class="section-title-wrapper">
+        <span class="section-subtitle">GET QUOTE</span>
+        <h2 class="section-title">Schedule Construction Consult</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <form class="luxury-form" id="contact-form" novalidate>
+        
+        <input type="hidden" id="contact-service" value="Construction">
+
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" id="contact-name" class="form-input" required>
+            <label for="contact-name" class="form-label">Full Name</label>
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="contact-phone" class="form-input" required>
+            <label for="contact-phone" class="form-label">Mobile Number</label>
+            <span class="form-error"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="email" id="contact-email" class="form-input" required>
+          <label for="contact-email" class="form-label">Email Address</label>
+          <span class="form-error"></span>
+        </div>
+
+        <div class="form-group">
+          <textarea id="contact-message" class="form-input" style="height:120px; resize:none;" required></textarea>
+          <label for="contact-message" class="form-label">Describe your project (Location, Land dimensions, villa type, story preference...)</label>
+          <span class="form-error"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary interactive-item" style="width:100%;">Submit Proposal Request</button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>RAJ <span>LUXURY</span></h3>
+          <p>Delivering premium gated villa layout properties, bespoke modular interior designs, and turnkey structural architectural creations across South India.</p>
+          <div class="social-links footer-socials-container"></div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="layouts.html">Gated Layouts</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Portfolio</a></li>
+            <li><a href="testimonials.html">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Pillar Services</h4>
+          <ul class="footer-links">
+            <li><a href="layouts.html">Layout Development</a></li>
+            <li><a href="interior.html">Luxury Villa Interiors</a></li>
+            <li><a href="interior.html">Modular Kitchens</a></li>
+            <li><a href="construction.html">Turnkey Building</a></li>
+            <li><a href="construction.html">Commercial Space</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Corporate Desk</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span class="footer-address-text">Tirupati , Andhra Pradesh</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span class="footer-phone-text">+91 9966563335</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span class="footer-email-text">rajeshmanagement26@gmail.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">&copy; 2026 Rajesh Reddy's real estate.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Association</a>
+          <a href="login.html">Admin Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Call, WA and Back to top Widgets -->
+  <div class="floating-actions">
+    <a href="#" class="float-btn call-btn interactive-item" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+    <a href="#" class="float-btn whatsapp-btn interactive-item" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M12.004 2C6.48 2 2 6.48 2 12c0 1.73.44 3.36 1.22 4.79L2 22l5.36-1.39C8.75 21.41 10.33 21.8 12.004 21.8c5.52 0 10-4.48 10-10S17.524 2 12.004 2zm0 18.2c-1.48 0-2.92-.37-4.18-1.07l-.3-.17-3.11.81.82-3.03-.19-.3c-.76-1.22-1.16-2.63-1.16-4.09 0-4.63 3.77-8.4 8.4-8.4s8.4 3.77 8.4 8.4c-.01 4.63-3.78 8.4-8.4 8.4z"/></svg>
+    </a>
+    <a href="#" class="float-btn back-to-top interactive-item">
+      <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </a>
+  </div>
+
+  <!-- FLOATING SOCIAL MEDIA BAR -->
+  <div class="floating-social-bar"></div>
+
+  <!-- Dynamic Scripts -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/animations.js"></script>
+  <script type="module" src="js/contact.js"></script>
+
+  <!-- Stage selection switcher -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btns = document.querySelectorAll('.timeline-stage-btn');
+      const detailBox = document.getElementById('timeline-detail-box');
+
+      const STAGES = {
+        1: {
+          title: "01. Architectural Planning & 3D Blueprints",
+          text: "We start by creating custom 2D floor plans and 3D architectural renders of your residence. We outline the layout orientation based on Vaastu rules, natural lighting, and calculate structural estimation costs."
+        },
+        2: {
+          title: "02. Soil Analysis & Foundation Casting",
+          text: "We execute core drilling to inspect soil bearing capacity. Then we excavate and pour heavy reinforced cement concrete (RCC) footings to establish a seismic-safe, robust structural foundation."
+        },
+        3: {
+          title: "03. Superstructure RCC Framing",
+          text: "This phase builds the skeleton of the building: casting columns, tie beams, and slab ceilings. Quality inspections verify alignment with structural drawings before pour casting."
+        },
+        4: {
+          title: "04. MEP Layout & Solid Brickwork",
+          text: "We raise walls using wire-cut solid red clay bricks, leaving conduits for plumbing, electrical wiring (MEP), and home automation controls."
+        },
+        5: {
+          title: "05. Plastering & Fine Italian Finishes",
+          text: "Plastering surfaces, followed by marble tiling floor placements, false ceiling paneling, modular wood fits, and premium painting coats."
+        },
+        6: {
+          title: "06. Utility Inspections & Key Handover",
+          text: "We test all mechanical systems, obtain local municipality clearance certificates (Occupancy Certificate), clean all surfaces, and deliver occupancy keys."
+        }
+      };
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const stageId = btn.getAttribute('data-stage');
+          const stage = STAGES[stageId];
+
+          detailBox.innerHTML = `
+            <div style="opacity: 0; transform: translateY(10px); transition: all 0.4s ease;">
+              <h3 style="font-family:var(--font-headings); font-size:3rem; color:var(--color-gold); margin-bottom:1.5rem;">${stage.title}</h3>
+              <p style="font-size:1.6rem; color:var(--color-silver); line-height:1.8;">${stage.text}</p>
+            </div>
+          `;
+
+          setTimeout(() => {
+            detailBox.querySelector('div').style.opacity = '1';
+            detailBox.querySelector('div').style.transform = 'translateY(0)';
+          }, 50);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

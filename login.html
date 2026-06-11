@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corporate Desk Login | Raj Luxury Estates</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* Unique layout overrides for 3D login flip card */
+    .login-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-primary-black);
+    }
+    
+    .login-card-3d-wrapper {
+      width: 480px;
+      height: 600px;
+      perspective: 1500px;
+    }
+
+    .login-card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .login-card-inner.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .login-card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background: var(--color-dark-gray);
+      border: 1px solid var(--border-glass-gold);
+      padding: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: var(--shadow-glass);
+    }
+
+    .login-card-front {
+      z-index: 2;
+    }
+
+    .login-card-back {
+      transform: rotateY(180deg);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Global Header -->
+  <header class="header sticky">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo-link interactive-item">
+        <svg class="logo-icon" viewBox="0 0 100 100">
+          <path d="M50 15 L62 38 L88 38 L68 54 L75 80 L50 65 L25 80 L32 54 L12 38 L38 38 Z" fill="#D4AF37" />
+        </svg>
+        <span class="logo-text">RAJ <span>LUXURY</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="layouts.html" class="nav-link">Layouts</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Portfolio</a></li>
+          <li class="nav-item"><a href="testimonials.html" class="nav-link">Reviews</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-gold-outline interactive-item" style="padding: 1rem 2.2rem; font-size: 1.2rem;">Back Home</a>
+        <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login 3D interface -->
+  <main class="login-container">
+    <div class="login-card-3d-wrapper reveal reveal-scale-in">
+      <div class="login-card-inner">
+        
+        <!-- FACE 1: BRAND WELCOME FRONT CARD -->
+        <div class="login-card-face login-card-front">
+          <div style="text-align: center; margin-bottom: 4rem;">
+            <svg viewBox="0 0 100 100" style="width:70px; height:70px; fill:var(--color-gold); margin-bottom: 2rem;">
+              <path d="M50 15 L62 38 L88 38 L68 54 L75 80 L50 65 L25 80 L32 54 L12 38 L38 38 Z" />
+            </svg>
+            <h2 style="font-size: 3rem; margin-bottom: 1rem;">RAJ <span>LUXURY</span></h2>
+            <span style="font-size:1.2rem; color:var(--color-silver); letter-spacing:0.2em; text-transform:uppercase;">Owner Portal Desk</span>
+          </div>
+
+          <p style="text-align: center; color: var(--color-silver); font-size:1.5rem; line-height: 1.7; margin-bottom: 4rem;">
+            Welcome to the secure administrative console. Log in to manage property layouts, modify portfolio images, configure crew members, update corporate contacts, and view site-visit logs.
+          </p>
+
+          <button class="btn btn-primary interactive-item" id="btn-reveal-form" style="width:100%;">Acknowledge & Access</button>
+        </div>
+
+        <!-- FACE 2: CREDENTIALS BACK CARD -->
+        <div class="login-card-face login-card-back">
+          <h2 style="font-size: 3rem; margin-bottom: 1rem; text-align:center;">Secure Login</h2>
+          <span style="font-size:1.2rem; color:var(--color-gold); letter-spacing:0.1em; text-transform:uppercase; text-align:center; display:block; margin-bottom: 4rem;">Enter admin credentials</span>
+
+          <form id="form-login" novalidate>
+            <div class="form-group">
+              <input type="text" id="login-username" class="form-input" required>
+              <label for="login-username" class="form-label">Username</label>
+              <span class="form-error" style="bottom: -2.5rem;">Please enter username.</span>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 4rem;">
+              <input type="password" id="login-password" class="form-input" required>
+              <label for="login-password" class="form-label">Password</label>
+              <span class="form-error" style="bottom: -2.5rem;">Please enter password.</span>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:1.5rem;">
+              <button type="submit" class="btn btn-primary interactive-item" style="width:100%;">Authorize Access</button>
+              <button type="button" class="btn btn-secondary interactive-item" id="btn-back-to-welcome" style="width:100%;">Go Back</button>
+            </div>
+          </form>
+
+          <div id="login-error-msg" style="
+            margin-top: 3rem;
+            color: #EF4444;
+            font-size: 1.4rem;
+            text-align: center;
+            opacity: 0;
+            transition: var(--transition-fast);
+          "></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating Social / Actions -->
+  <div class="floating-social-bar"></div>
+
+  <!-- Dynamic Scripts -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/animations.js"></script>
+  
+  <script type="module">
+    import { AuthManager } from './js/auth.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Guard route check: if already logged in, skip login page
+      AuthManager.guardLoginPage();
+
+      const cardInner = document.querySelector('.login-card-inner');
+      const revealFormBtn = document.getElementById('btn-reveal-form');
+      const backWelcomeBtn = document.getElementById('btn-back-to-welcome');
+
+      // 1. 3D card flip triggers
+      revealFormBtn.addEventListener('click', () => {
+        cardInner.classList.add('flipped');
+      });
+
+      backWelcomeBtn.addEventListener('click', () => {
+        cardInner.classList.remove('flipped');
+      });
+
+      // 2. Form Submit authorization
+      const loginForm = document.getElementById('form-login');
+      const errorMsgEl = document.getElementById('login-error-msg');
+
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const usernameIn = document.getElementById('login-username');
+        const passwordIn = document.getElementById('login-password');
+
+        const username = usernameIn.value.trim();
+        const password = passwordIn.value.trim();
+
+        // Reset error views
+        document.querySelectorAll('.form-group').forEach(grp => grp.classList.remove('has-error'));
+        errorMsgEl.style.opacity = '0';
+
+        let isValid = true;
+
+        if (!username) {
+          usernameIn.closest('.form-group').classList.add('has-error');
+          isValid = false;
+        }
+        if (!password) {
+          passwordIn.closest('.form-group').classList.add('has-error');
+          isValid = false;
+        }
+
+        if (isValid) {
+          const res = AuthManager.login(username, password);
+          if (res.success) {
+            window.location.href = 'admin.html';
+          } else {
+            errorMsgEl.innerText = res.error;
+            errorMsgEl.style.opacity = '1';
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

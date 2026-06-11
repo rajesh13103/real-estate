@@ -1,0 +1,7 @@
+# robots.txt for Raj Luxury Estates & Design
+User-agent: *
+Allow: /
+Disallow: /login.html
+Disallow: /admin.html
+
+Sitemap: https://rajluxury.com/sitemap.xml

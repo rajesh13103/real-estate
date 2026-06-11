@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Dashboard Console | RAJESH REDDY'S REAL ESTATE</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <div class="admin-shell">
+    
+    <!-- 1. LEFT SIDEBAR PANEL -->
+    <aside class="admin-sidebar">
+      <div class="admin-logo">RAJESH REDDY <span>ADMIN</span></div>
+      
+      <ul class="admin-nav-menu">
+        <li class="admin-nav-item active" data-tab="pane-dashboard">
+          <button>
+            <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+            <span>Dashboard</span>
+          </button>
+        </li>
+        <li class="admin-nav-item" data-tab="pane-layouts">
+          <button>
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            <span>Property Layouts</span>
+          </button>
+        </li>
+        <li class="admin-nav-item" data-tab="pane-inquiries">
+          <button>
+            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm0-3h12v2H6V6zm0 6h8v2H6v-2z"/></svg>
+            <span>Site Visits Logs</span>
+          </button>
+        </li>
+        <li class="admin-nav-item" data-tab="pane-crew">
+          <button>
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 8 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            <span>Manage Crew</span>
+          </button>
+        </li>
+        <li class="admin-nav-item" data-tab="pane-gallery">
+          <button>
+            <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+            <span>Gallery</span>
+          </button>
+        </li>
+        <li class="admin-nav-item" data-tab="pane-settings">
+          <button>
+            <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+            <span>Config Settings</span>
+          </button>
+        </li>
+      </ul>
+
+      <!-- Logout trigger -->
+      <button class="btn btn-secondary admin-logout-btn interactive-item" id="btn-admin-logout" style="margin-top:auto; width:100%; border:1px solid var(--border-glass);">Log Out Desk</button>
+    </aside>
+
+    <!-- 2. RIGHT CONTENT AREA -->
+    <main class="admin-main-container">
+      
+      <!-- Top Title Welcome Bar -->
+      <header class="admin-header-row">
+        <div class="admin-welcome">
+          <h2>Administrative Console</h2>
+          <p>Welcome back,Rajesh Reddy. Control panel systems active.</p>
+        </div>
+      </header>
+
+      <!-- TAB PANE 1: TELEMETRY DASHBOARD -->
+      <section class="tab-pane active" id="pane-dashboard">
+        
+        <!-- Metrics stats row -->
+        <div class="admin-stats-grid">
+          
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon">
+              <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            </div>
+            <div class="admin-stat-info">
+              <h4>Active Layouts</h4>
+              <p id="stat-total-layouts">1</p>
+            </div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            </div>
+            <div class="admin-stat-info">
+              <h4>Logged Inquiries</h4>
+              <p id="stat-total-inquiries">0</p>
+            </div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3z"/></svg>
+            </div>
+            <div class="admin-stat-info">
+              <h4>Crew Count</h4>
+              <p id="stat-total-crew">0</p>
+            </div>
+          </div>
+
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2z"/></svg>
+            </div>
+            <div class="admin-stat-info">
+              <h4>Portfolio Images</h4>
+              <p id="stat-total-gallery">0</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Recent Site Visits Logs table view -->
+        <h3 style="font-family:var(--font-headings); font-size:2.4rem; margin-bottom:2.5rem; color:var(--color-gold-light);">Corporate Inquiries Desk</h3>
+        <div class="table-responsive">
+          <table class="admin-table" id="admin-inquiries-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Client Name</th>
+                <th>Phone</th>
+                <th>Email Address</th>
+                <th>Inquiry details / Layout Requested</th>
+                <th>Timestamp</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JS renders inquiries logs here -->
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <!-- TAB PANE 2: PROPERTY LAYOUTS CRUD -->
+      <section class="tab-pane" id="pane-layouts">
+        <div class="pane-action-bar">
+          <h2 class="pane-title">Layout Properties Listings</h2>
+          <button class="btn btn-primary interactive-item" id="btn-add-layout">Add Gated Layout</button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table" id="admin-layouts-table">
+            <thead>
+              <tr>
+                <th>Preview</th>
+                <th>Layout Name</th>
+                <th>Location</th>
+                <th>Starts price</th>
+                <th>Plots Limit</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JS renders layouts rows here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB PANE 3: ALL INQUIRIES VIEW -->
+      <section class="tab-pane" id="pane-inquiries">
+        <div class="pane-action-bar">
+          <h2 class="pane-title">Visitor Site Visits & Contact Inquiries Logs</h2>
+        </div>
+        
+        <div class="table-responsive">
+          <table class="admin-table" style="width:100%;">
+            <!-- This pane reuses inquiries rendering from telemetry, populated by js/admin.js -->
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB PANE 4: MANAGE CREW ROSTER CRUD -->
+      <section class="tab-pane" id="pane-crew">
+        <div class="pane-action-bar">
+          <h2 class="pane-title">Professional Expert Crew Members (15)</h2>
+          <button class="btn btn-primary interactive-item" id="btn-add-crew">Add Crew Member</button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table" id="admin-crew-table">
+            <thead>
+              <tr>
+                <th>Avatar</th>
+                <th>Member Name</th>
+                <th>Role Designation</th>
+                <th>Experience</th>
+                <th>Expertise Skills</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JS renders crew rows here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TAB PANE 5: PORTFOLIO GALLERY CRUD -->
+      <section class="tab-pane" id="pane-gallery">
+        <div class="pane-action-bar">
+          <h2 class="pane-title">Portfolio Image Gallery</h2>
+          <button class="btn btn-primary interactive-item" id="btn-add-gallery">Upload Image</button>
+        </div>
+
+        <!-- Render grid list of images with deletion options -->
+        <div id="admin-gallery-list" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 3rem; margin-bottom: 4rem;">
+          <!-- JS renders gallery list cards here -->
+        </div>
+      </section>
+
+      <!-- TAB PANE 6: SETTINGS, OWNER INFO & RESETS -->
+      <section class="tab-pane" id="pane-settings">
+        
+        <div class="settings-grid">
+          
+          <!-- Col 1: Corporate Contacts & Social configuration -->
+          <div>
+            <form class="luxury-form" id="form-settings-save" style="margin-bottom:4rem;" novalidate>
+              <h3 style="font-family:var(--font-headings); font-size:2.2rem; color:var(--color-gold); border-bottom:1px solid var(--border-glass); padding-bottom:1rem; margin-bottom:3rem;">Corporate Support Details</h3>
+              
+              <div class="form-group">
+                <input type="text" id="settings-company" class="form-input" required>
+                <label for="settings-company" class="form-label">Company Name</label>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="settings-phone" class="form-input" required>
+                  <label for="settings-phone" class="form-label">Office Phone Number</label>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="settings-whatsapp" class="form-input" required>
+                  <label for="settings-whatsapp" class="form-label">WhatsApp Contact (Number Only)</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="email" id="settings-email" class="form-input" required>
+                <label for="settings-email" class="form-label">Corporate Email Address</label>
+              </div>
+
+              <div class="form-group">
+                <textarea id="settings-address" class="form-input" style="height:80px; resize:none;" required></textarea>
+                <label for="settings-address" class="form-label">Office Address</label>
+              </div>
+
+              <h3 style="font-family:var(--font-headings); font-size:2.2rem; color:var(--color-gold); border-bottom:1px solid var(--border-glass); padding-bottom:1rem; margin-bottom:3rem; margin-top:5rem;">Social Media Links</h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="url" id="settings-fb" class="form-input">
+                  <label for="settings-fb" class="form-label">Facebook Profile Link</label>
+                </div>
+                <div class="form-group">
+                  <input type="url" id="settings-ig" class="form-input">
+                  <label for="settings-ig" class="form-label">Instagram Profile Link</label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="url" id="settings-li" class="form-input">
+                  <label for="settings-li" class="form-label">LinkedIn Profile Link</label>
+                </div>
+                <div class="form-group">
+                  <input type="url" id="settings-yt" class="form-input">
+                  <label for="settings-yt" class="form-label">YouTube Channel Link</label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="url" id="settings-tw" class="form-input">
+                  <label for="settings-tw" class="form-label">Twitter / X Link</label>
+                </div>
+                <div class="form-group">
+                  <input type="url" id="settings-wa-link" class="form-input">
+                  <label for="settings-wa-link" class="form-label">WhatsApp Click-to-Chat URL</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="url" id="settings-tg" class="form-input">
+                <label for="settings-tg" class="form-label">Telegram Channel Link</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary interactive-item" style="width:100%;">Save Support Settings</button>
+            </form>
+          </div>
+
+          <!-- Col 2: Owner profile details & Danger Resets -->
+          <div>
+            <form class="luxury-form" id="form-owner-save" style="margin-bottom:4rem;" novalidate>
+              <h3 style="font-family:var(--font-headings); font-size:2.2rem; color:var(--color-gold); border-bottom:1px solid var(--border-glass); padding-bottom:1rem; margin-bottom:3rem;">Owner Executive Profile</h3>
+              
+              <div class="form-group">
+                <input type="text" id="owner-name" class="form-input" required>
+                <label for="owner-name" class="form-label">Owner Name</label>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="owner-role" class="form-input" required>
+                  <label for="owner-role" class="form-label">Designation Role</label>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="owner-exp" class="form-input" required>
+                  <label for="owner-exp" class="form-label">Work Experience</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <textarea id="owner-bio" class="form-input" style="height:150px; resize:none;" required></textarea>
+                <label for="owner-bio" class="form-label">Owner Short Biography</label>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="owner-phone" class="form-input" required>
+                  <label for="owner-phone" class="form-label">Founder Contact No.</label>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="owner-wa" class="form-input" required>
+                  <label for="owner-wa" class="form-label">Founder WhatsApp Support</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="email" id="owner-email" class="form-input" required>
+                <label for="owner-email" class="form-label">Founder Personal Email</label>
+              </div>
+
+              <div class="form-group">
+                <label style="font-size:1.1rem; text-transform:uppercase; color:var(--color-gold-light); display:block; margin-bottom:1rem;">Upload Owner Photo</label>
+                <div class="file-upload-wrapper">
+                  <svg class="file-upload-icon" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+                  <p style="font-size:1.3rem; margin:0;">Click or drag new owner avatar photo</p>
+                  <input type="file" id="owner-photo-file" accept="image/*">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary interactive-item" style="width:100%;">Save Owner Details</button>
+            </form>
+
+            <!-- Danger Zone reset database -->
+            <div class="luxury-form" style="border-color:#EF4444; background: rgba(239, 68, 68, 0.02);">
+              <h3 style="font-family:var(--font-headings); font-size:2.2rem; color:#EF4444; border-bottom:1px solid rgba(239, 68, 68, 0.2); padding-bottom:1rem; margin-bottom:2rem;">Danger Configuration</h3>
+              <p style="font-size:1.3rem; color:var(--color-silver); margin-bottom:3rem;">Revert database to original seed state. All custom layouts, roster modifications and site visits inquiries logs will be destroyed.</p>
+              <button class="btn admin-logout-btn interactive-item" id="btn-reset-db" style="width:100%;">Revert Database State</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- 3. DIALOG OVERLAY MODAL: LAYOUTS CRUD FORM -->
+  <div class="admin-modal" id="modal-layouts">
+    <div class="admin-modal-content">
+      <button class="admin-modal-close">✕</button>
+      <h3 class="admin-modal-title" id="layout-modal-title">Save Property Layout</h3>
+      
+      <form id="form-layout-save" novalidate>
+        
+        <div class="form-group">
+          <input type="text" id="layout-name" class="form-input" required>
+          <label for="layout-name" class="form-label">Layout Name</label>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" id="layout-location" class="form-input" required>
+            <label for="layout-location" class="form-label">City Location (e.g. Whitefield, Bangalore)</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="layout-address" class="form-input" required>
+            <label for="layout-address" class="form-label">Exact Address / Survey Number</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" id="layout-district" class="form-input" required>
+            <label for="layout-district" class="form-label">District</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="layout-state" class="form-input" required>
+            <label for="layout-state" class="form-label">State</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="layout-pincode" class="form-input" required>
+            <label for="layout-pincode" class="form-label">Pincode</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <input type="number" id="layout-price" class="form-input" required>
+            <label for="layout-price" class="form-label">Investment Starts (INR, e.g. 7500000)</label>
+          </div>
+          <div class="form-group">
+            <input type="number" id="layout-plots" class="form-input" required>
+            <label for="layout-plots" class="form-label">Plots Count Available</label>
+          </div>
+          <div class="form-group">
+            <input type="number" id="layout-area" class="form-input" required>
+            <label for="layout-area" class="form-label">Total Layout Area (sq.ft.)</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" id="layout-sizes" class="form-input" required>
+            <label for="layout-sizes" class="form-label">Sizes Available (comma separated, e.g. 1200, 1500, 2400 sq.ft.)</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="layout-road" class="form-input" required>
+            <label for="layout-road" class="form-label">Internal Roads Width (e.g. 40 ft & 60 ft Roads)</label>
+          </div>
+          <div class="form-group">
+            <select id="layout-status" class="form-input" required>
+              <option value="Available">Available</option>
+              <option value="Limited Availability">Limited Availability</option>
+              <option value="Sold Out">Sold Out</option>
+              <option value="Upcoming">Upcoming</option>
+            </select>
+            <label for="layout-status" class="form-label">Status</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <textarea id="layout-desc" class="form-input" style="height:120px; resize:none;" required></textarea>
+          <label for="layout-desc" class="form-label">Detailed Description</label>
+        </div>
+
+        <div class="form-group">
+          <input type="url" id="layout-maps" class="form-input" required>
+          <label for="layout-maps" class="form-label">Google Maps Embed URL (Iframe Src)</label>
+        </div>
+
+        <div class="form-group">
+          <textarea id="layout-amenities" class="form-input" style="height:80px; resize:none;" required></textarea>
+          <label for="layout-amenities" class="form-label">Community Amenities (comma separated, e.g. Water Connection, Security, Parks)</label>
+        </div>
+
+        <div class="form-group">
+          <textarea id="layout-nearby" class="form-input" style="height:80px; resize:none;" required></textarea>
+          <label for="layout-nearby" class="form-label">Proximity Landmarks (comma separated in Name:Category:Distance format, e.g. Airport:Transport:9.5)</label>
+        </div>
+
+        <!-- Image Upload Base64 -->
+        <div class="form-row" style="align-items:center;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label style="font-size:1.1rem; text-transform:uppercase; color:var(--color-gold-light); display:block; margin-bottom:1rem;">Upload Layout Showcase Image</label>
+            <div class="file-upload-wrapper">
+              <svg class="file-upload-icon" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+              <p style="font-size:1.2rem; margin:0;">Choose image</p>
+              <input type="file" id="layout-image-file" accept="image/*">
+            </div>
+          </div>
+          <div id="layout-image-preview" class="file-preview">
+            <!-- Render Base64 preview dynamic -->
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary interactive-item" style="width:100%; margin-top:4rem;">Save Property Layout</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. DIALOG OVERLAY MODAL: CREW CRUD FORM -->
+  <div class="admin-modal" id="modal-crew">
+    <div class="admin-modal-content" style="width:550px;">
+      <button class="admin-modal-close">✕</button>
+      <h3 class="admin-modal-title" id="crew-modal-title">Save Crew Roster Details</h3>
+      
+      <form id="form-crew-save" novalidate>
+        
+        <div class="form-group">
+          <input type="text" id="crew-name" class="form-input" required>
+          <label for="crew-name" class="form-label">Full Name</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" id="crew-role" class="form-input" required>
+          <label for="crew-role" class="form-label">Role Designation (e.g. Chief Structural Engineer)</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" id="crew-exp" class="form-input" required>
+          <label for="crew-exp" class="form-label">Work Experience (e.g. 10 Years)</label>
+        </div>
+
+        <div class="form-group">
+          <textarea id="crew-skills" class="form-input" style="height:100px; resize:none;" required></textarea>
+          <label for="crew-skills" class="form-label">Core Skills (comma separated)</label>
+        </div>
+
+        <!-- Image Upload Base64 -->
+        <div class="form-row" style="align-items:center;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label style="font-size:1.1rem; text-transform:uppercase; color:var(--color-gold-light); display:block; margin-bottom:1rem;">Upload Avatar Photo</label>
+            <div class="file-upload-wrapper">
+              <svg class="file-upload-icon" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+              <input type="file" id="crew-image-file" accept="image/*">
+            </div>
+          </div>
+          <div id="crew-image-preview" class="file-preview">
+            <!-- Base64 Preview dynamic -->
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary interactive-item" style="width:100%; margin-top:4rem;">Save Crew Member</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 5. DIALOG OVERLAY MODAL: GALLERY CRUD FORM -->
+  <div class="admin-modal" id="modal-gallery">
+    <div class="admin-modal-content" style="width:500px;">
+      <button class="admin-modal-close">✕</button>
+      <h3 class="admin-modal-title">Upload Image to Portfolio</h3>
+      
+      <form id="form-gallery-save" novalidate>
+        
+        <div class="form-group">
+          <input type="text" id="gallery-title" class="form-input" required>
+          <label for="gallery-title" class="form-label">Image Title</label>
+        </div>
+
+        <div class="form-group">
+          <select id="gallery-category" class="form-input" required>
+            <option value="layouts">Gated Layouts Developed</option>
+            <option value="construction">Structural Construction Works</option>
+            <option value="interiors">Room Designs Showcase</option>
+          </select>
+          <label for="gallery-category" class="form-label">Portfolio Category</label>
+        </div>
+
+        <div class="form-group">
+          <label style="font-size:1.1rem; text-transform:uppercase; color:var(--color-gold-light); display:block; margin-bottom:1rem;">Select Portfolio Image File</label>
+          <div class="file-upload-wrapper">
+            <svg class="file-upload-icon" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+            <input type="file" id="gallery-image-file" accept="image/*" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary interactive-item" style="width:100%; margin-top:4rem;">Upload Image</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dynamic Scripts -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/admin.js"></script>
+  
+  <script>
+    // Live update triggers for Base64 File dropzones previews inside modals
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      const bindImagePreview = (fileInputId, previewId) => {
+        const fileInput = document.getElementById(fileInputId);
+        const previewEl = document.getElementById(previewId);
+
+        if (fileInput && previewEl) {
+          fileInput.addEventListener('change', () => {
+            previewEl.innerHTML = '';
+            if (fileInput.files && fileInput.files[0]) {
+              const reader = new FileReader();
+              reader.onload = (e) => {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.cssText = 'width:100px; height:75px; object-fit:cover; border:1px solid var(--border-glass);';
+                previewEl.appendChild(img);
+              };
+              reader.readAsDataURL(fileInput.files[0]);
+            }
+          });
+        }
+      };
+
+      bindImagePreview('layout-image-file', 'layout-image-preview');
+      bindImagePreview('crew-image-file', 'crew-image-preview');
+    });
+  </script>
+</body>
+</html>

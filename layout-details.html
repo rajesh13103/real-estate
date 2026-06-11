@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Specifications | Raj Luxury Estates</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Global Header -->
+  <header class="header sticky">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo-link interactive-item">
+        <svg class="logo-icon" viewBox="0 0 100 100">
+          <path d="M50 15 L62 38 L88 38 L68 54 L75 80 L50 65 L25 80 L32 54 L12 38 L38 38 Z" fill="#D4AF37" />
+        </svg>
+        <span class="logo-text">RAJ <span>LUXURY</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item active"><a href="layouts.html" class="nav-link">Layouts</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Portfolio</a></li>
+          <li class="nav-item"><a href="testimonials.html" class="nav-link">Reviews</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-gold-outline interactive-item" style="padding: 1rem 2.2rem; font-size: 1.2rem;">Owner Desk</a>
+        <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="detail-page-container">
+    <!-- 1. Header Spec Title Block -->
+    <section class="detail-header">
+      <div class="container">
+        <div class="detail-title-row">
+          <div class="detail-main-info">
+            <h1 id="detail-title">Premium Layout Title</h1>
+            <div class="detail-address">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span id="detail-location">Layout Full Address, Location</span>
+            </div>
+          </div>
+          <div class="detail-pricing-box">
+            <span class="detail-price-label">Investment Outline</span>
+            <span class="detail-price-val" id="detail-price">₹0.00 Lakh</span>
+            <span class="detail-price-sqft" id="detail-price-sqft">Est. ~₹0,000/sq.ft.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Interactive Media Showcase Section -->
+    <section class="section" style="padding: 0;">
+      <div class="container">
+        <div class="detail-showcase-container">
+          
+          <!-- Image slider main frame -->
+          <div class="detail-gallery-main reveal reveal-scale-in">
+            <!-- Images and arrows populated dynamically -->
+            <div class="gallery-arrows">
+              <button class="gallery-arrow-btn" id="btn-slide-prev">⟵</button>
+              <button class="gallery-arrow-btn" id="btn-slide-next">⟶</button>
+            </div>
+          </div>
+
+          <!-- Static highlight information widget -->
+          <div class="reveal reveal-fade-left" style="
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          ">
+            <h3 style="font-family: var(--font-headings); font-size: 2.8rem; margin-bottom: 2rem; color: var(--color-gold);">Exquisite Gated Plotting</h3>
+            <p style="font-size:1.5rem; color: var(--color-silver); margin-bottom: 3rem; line-height: 1.7;">
+              Every plot layout designed by Raj Luxury incorporates underground utility lines (power, water, data), strict security gate entries, and comprehensive municipal body clearances.
+            </p>
+            <div style="display:flex; flex-direction:column; gap:1.5rem; font-size:1.4rem;">
+              <div style="display:flex; justify-content:space-between; border-bottom: 1px solid var(--border-glass); padding-bottom: 1rem;">
+                <span style="color:var(--color-silver);">Approval Body</span>
+                <strong>BMRDA / RERA Approved</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; border-bottom: 1px solid var(--border-glass); padding-bottom: 1rem;">
+                <span style="color:var(--color-silver);">Clear Titles</span>
+                <strong>A-Khata Registered</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; padding-bottom: 1rem;">
+                <span style="color:var(--color-silver);">Bank Loans</span>
+                <strong>Pre-Approved (SBI, HDFC)</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Specifications Metrics Grid -->
+    <section class="section" style="padding: 4rem 0;">
+      <div class="container">
+        <div class="detail-specs-panel reveal reveal-fade-up">
+          <div class="detail-spec-card">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/></svg>
+            <h4>Total Area</h4>
+            <p id="spec-area">00,000 sq.ft.</p>
+          </div>
+          <div class="detail-spec-card">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <h4>Availability</h4>
+            <p id="spec-plots">0 Available</p>
+          </div>
+          <div class="detail-spec-card">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm1 13h-2v-6h2v6z"/></svg>
+            <h4>Internal Roads</h4>
+            <p id="spec-road">40 ft Wide</p>
+          </div>
+          <div class="detail-spec-card" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+            <h4>Project Status</h4>
+            <div id="spec-status" class="property-status-badge" style="margin-top:1rem; position:static;">Status</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Content Area & Booking Sidebar -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="detail-content-wrapper">
+          
+          <!-- Left Column Content -->
+          <div>
+            
+            <!-- Description -->
+            <div class="detail-desc-block reveal reveal-fade-up">
+              <h3>Layout Description & Key Architecture</h3>
+              <p class="detail-desc-text" id="detail-desc">Loading description details...</p>
+            </div>
+
+            <!-- Vector Plot Map Mockup -->
+            <div class="amenities-section reveal reveal-fade-up">
+              <h3>Interactive Plot Division Map</h3>
+              <p style="font-size:1.5rem; color:var(--color-silver); margin-bottom: 3rem;">Click layout segments to view sizes. The gold highlights represent premium corner plots.</p>
+              
+              <!-- Plot map mock SVG -->
+              <div style="border: 1px solid var(--border-glass-gold); background: var(--bg-glass); padding: 3rem; text-align:center;">
+                <svg viewBox="0 0 800 400" style="max-width:100%; height:auto;">
+                  <!-- Roads -->
+                  <rect x="0" y="180" width="800" height="40" fill="#222" stroke="var(--border-glass)" />
+                  <rect x="380" y="0" width="40" height="400" fill="#222" stroke="var(--border-glass)" />
+                  <text x="200" y="205" fill="#555" font-family="Poppins" font-size="12" letter-spacing="1">40 FT INTERNAL ROAD</text>
+                  <text x="400" y="100" fill="#555" font-family="Poppins" font-size="12" letter-spacing="1" transform="rotate(90,400,100)">60 FT BOULEVARD</text>
+
+                  <!-- Plots Grid top left -->
+                  <g class="interactive-item" style="cursor:pointer;" onclick="alert('Plot #01 (Corner): 4,000 sq.ft. Status: Available')">
+                    <rect x="50" y="30" width="100" height="120" fill="rgba(212,175,55,0.15)" stroke="var(--color-gold)" stroke-width="1.5" />
+                    <text x="100" y="95" fill="var(--color-gold)" font-family="Poppins" font-size="14" text-anchor="middle">#01 Gold</text>
+                  </g>
+                  <g class="interactive-item" style="cursor:pointer;" onclick="alert('Plot #02: 2,400 sq.ft. Status: Available')">
+                    <rect x="160" y="30" width="100" height="120" fill="var(--bg-glass)" stroke="var(--border-glass)" stroke-width="1" />
+                    <text x="210" y="95" fill="var(--color-silver)" font-family="Poppins" font-size="14" text-anchor="middle">#02</text>
+                  </g>
+                  <g class="interactive-item" style="cursor:pointer;" onclick="alert('Plot #03: 2,400 sq.ft. Status: Sold Out')">
+                    <rect x="270" y="30" width="100" height="120" fill="rgba(239,68,68,0.05)" stroke="rgba(239,68,68,0.2)" stroke-width="1" />
+                    <text x="320" y="95" fill="#EF4444" font-family="Poppins" font-size="14" text-anchor="middle">#03 Sold</text>
+                  </g>
+
+                  <!-- Plots Grid top right -->
+                  <g class="interactive-item" style="cursor:pointer;" onclick="alert('Plot #04 (Corner): 5,000 sq.ft. Status: Available')">
+                    <rect x="430" y="30" width="150" height="120" fill="rgba(212,175,55,0.15)" stroke="var(--color-gold)" stroke-width="1.5" />
+                    <text x="505" y="95" fill="var(--color-gold)" font-family="Poppins" font-size="14" text-anchor="middle">#04 Gold</text>
+                  </g>
+                  <g class="interactive-item" style="cursor:pointer;" onclick="alert('Plot #05: 3,200 sq.ft. Status: Available')">
+                    <rect x="590" y="30" width="150" height="120" fill="var(--bg-glass)" stroke="var(--border-glass)" stroke-width="1" />
+                    <text x="665" y="95" fill="var(--color-silver)" font-family="Poppins" font-size="14" text-anchor="middle">#05</text>
+                  </g>
+
+                  <!-- Plots Grid bottom left -->
+                  <g class="interactive-item" style="cursor:pointer;" onclick="alert('Plot #06: 2,400 sq.ft. Status: Available')">
+                    <rect x="50" y="250" width="150" height="120" fill="var(--bg-glass)" stroke="var(--border-glass)" stroke-width="1" />
+                    <text x="125" y="315" fill="var(--color-silver)" font-family="Poppins" font-size="14" text-anchor="middle">#06</text>
+                  </g>
+                  <g class="interactive-item" style="cursor:pointer;" onclick="alert('Plot #07: 3,200 sq.ft. Status: Available')">
+                    <rect x="210" y="250" width="160" height="120" fill="var(--bg-glass)" stroke="var(--border-glass)" stroke-width="1" />
+                    <text x="290" y="315" fill="var(--color-silver)" font-family="Poppins" font-size="14" text-anchor="middle">#07</text>
+                  </g>
+
+                  <!-- Plots Grid bottom right -->
+                  <g class="interactive-item" style="cursor:pointer;" onclick="alert('Plot #08: 4,000 sq.ft. Status: Sold Out')">
+                    <rect x="430" y="250" width="150" height="120" fill="rgba(239,68,68,0.05)" stroke="rgba(239,68,68,0.2)" stroke-width="1" />
+                    <text x="505" y="315" fill="#EF4444" font-family="Poppins" font-size="14" text-anchor="middle">#08 Sold</text>
+                  </g>
+                  <g class="interactive-item" style="cursor:pointer;" onclick="alert('Plot #09 (Lake view): 6,000 sq.ft. Status: Available')">
+                    <rect x="590" y="250" width="150" height="120" fill="rgba(212,175,55,0.15)" stroke="var(--color-gold)" stroke-width="1.5" />
+                    <text x="665" y="315" fill="var(--color-gold)" font-family="Poppins" font-size="14" text-anchor="middle">#09 Gold</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Amenities -->
+            <div class="amenities-section reveal reveal-fade-up">
+              <h3>Community Amenities Included</h3>
+              <div class="amenities-grid">
+                <!-- Javascript populates -->
+              </div>
+            </div>
+
+            <!-- Nearby Landmarks -->
+            <div class="nearby-section reveal reveal-fade-up">
+              <h3>Proximity & Nearby Landmarks</h3>
+              <table class="nearby-table">
+                <thead>
+                  <tr>
+                    <th>Landmark Name</th>
+                    <th>Category</th>
+                    <th>Distance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Javascript populates table rows -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Google Maps -->
+            <div class="location-map-section reveal reveal-fade-up">
+              <h3>Satellite Location Marker</h3>
+              <div class="iframe-map-wrapper">
+                <iframe src="" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+              <div class="map-buttons-row">
+                <a href="#" id="btn-map-url" class="btn btn-primary interactive-item" target="_blank">View on Google Maps</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column Booking Form Widget -->
+          <div class="reveal reveal-fade-left">
+            <div class="booking-widget-container">
+              <h3 class="booking-widget-title">Book Site Visit</h3>
+              <span class="booking-widget-subtitle">Register for transport and guided layout tour</span>
+              
+              <form class="luxury-form" style="border:none; padding:0; background:transparent;" id="detail-booking-form" novalidate>
+                
+                <div class="form-group">
+                  <input type="text" id="booking-layout" class="form-input" readonly>
+                  <label for="booking-layout" class="form-label">Selected Layout</label>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" id="booking-name" class="form-input" required>
+                  <label for="booking-name" class="form-label">Your Full Name</label>
+                  <span class="form-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <input type="tel" id="booking-phone" class="form-input" required>
+                  <label for="booking-phone" class="form-label">Mobile Number</label>
+                  <span class="form-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <input type="email" id="booking-email" class="form-input" required>
+                  <label for="booking-email" class="form-label">Email Address</label>
+                  <span class="form-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <input type="date" id="booking-date" class="form-input" required>
+                  <label for="booking-date" class="form-label">Preferred Date</label>
+                  <span class="form-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <select id="booking-time" class="form-input" required>
+                    <option value=""></option>
+                    <option value="09:30 AM - 11:30 AM">09:30 AM - 11:30 AM</option>
+                    <option value="11:30 AM - 01:30 PM">11:30 AM - 01:30 PM</option>
+                    <option value="02:30 PM - 04:30 PM">02:30 PM - 04:30 PM</option>
+                    <option value="04:30 PM - 06:30 PM">04:30 PM - 06:30 PM</option>
+                  </select>
+                  <label for="booking-time" class="form-label">Preferred Time Slot</label>
+                  <span class="form-error"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary interactive-item" style="width:100%;">Schedule Visit</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>RAJESH REDDY <span>REAL ESTATE</span></h3>
+          <p>Delivering premium gated villa layout properties, bespoke modular interior designs, and turnkey structural architectural creations across South India.</p>
+          <div class="social-links footer-socials-container"></div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="layouts.html">Gated Layouts</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Portfolio</a></li>
+            <li><a href="testimonials.html">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Pillar Services</h4>
+          <ul class="footer-links">
+            <li><a href="layouts.html">Layout Development</a></li>
+            <li><a href="interior.html">Luxury Villa Interiors</a></li>
+            <li><a href="interior.html">Modular Kitchens</a></li>
+            <li><a href="construction.html">Turnkey Building</a></li>
+            <li><a href="construction.html">Commercial Space</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Corporate Desk</h4>
+          <div class="footer-contact-info">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span class="footer-address-text">Tirupathi , Andhra Pradesh</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span class="footer-phone-text">+91 9966563335</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span class="footer-email-text">rajeshmanagement26@gmail.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">&copy; 2026 Rajesh Reddy's Real Estate. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Association</a>
+          <a href="login.html">Admin Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Actions -->
+  <div class="floating-actions">
+    <a href="#" class="float-btn call-btn interactive-item" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+    <a href="#" class="float-btn whatsapp-btn interactive-item" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M12.004 2C6.48 2 2 6.48 2 12c0 1.73.44 3.36 1.22 4.79L2 22l5.36-1.39C8.75 21.41 10.33 21.8 12.004 21.8c5.52 0 10-4.48 10-10S17.524 2 12.004 2zm0 18.2c-1.48 0-2.92-.37-4.18-1.07l-.3-.17-3.11.81.82-3.03-.19-.3c-.76-1.22-1.16-2.63-1.16-4.09 0-4.63 3.77-8.4 8.4-8.4s8.4 3.77 8.4 8.4c-.01 4.63-3.78 8.4-8.4 8.4z"/></svg>
+    </a>
+    <a href="#" class="float-btn back-to-top interactive-item">
+      <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </a>
+  </div>
+
+  <!-- FLOATING SOCIAL MEDIA BAR -->
+  <div class="floating-social-bar"></div>
+
+  <!-- Dynamic Scripts -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/animations.js"></script>
+  <script type="module" src="js/layouts.js"></script>
+</body>
+</html>
