@@ -1,0 +1,494 @@
+/* css/layouts.css */
+/* Luxury Real Estate - Property Listings & Details Layouts */
+
+/* 1. Search & Filter Dashboard */
+.filter-section {
+  padding: 4rem 0;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  margin-bottom: 6rem;
+  border-radius: 0;
+}
+
+.filter-grid-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: flex-end;
+}
+
+.search-input-group {
+  position: relative;
+}
+
+.search-input-group input {
+  width: 100%;
+  padding: 1.5rem 2rem 1.5rem 5rem;
+  background: var(--color-dark-gray);
+  border: 1px solid var(--border-glass);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  outline: none;
+  font-size: 1.4rem;
+  transition: var(--transition-fast);
+}
+
+.search-input-group input:focus {
+  border-color: var(--color-gold);
+}
+
+.search-input-group svg {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  fill: var(--color-silver);
+}
+
+.filter-dropdown-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.filter-dropdown-group label {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--color-gold-light);
+}
+
+.filter-dropdown-group select {
+  padding: 1.5rem;
+  background: var(--color-dark-gray);
+  border: 1px solid var(--border-glass);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  outline: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-dropdown-group select:focus {
+  border-color: var(--color-gold);
+}
+
+.btn-filter-reset {
+  padding: 1.5rem;
+  background: transparent;
+  color: var(--color-silver);
+  border: 1px solid var(--border-glass);
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-filter-reset:hover {
+  border-color: #EF4444;
+  color: #EF4444;
+}
+
+/* 2. Grid for Property Cards */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 4rem;
+  margin-bottom: 6rem;
+}
+
+.no-results-msg {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 8rem 0;
+  font-size: 2.2rem;
+  font-family: var(--font-headings);
+  color: var(--color-silver);
+  border: 1px solid var(--border-glass);
+  background: var(--bg-glass);
+}
+
+/* 3. Property Detail Page Structuring */
+.detail-header {
+  padding: 12rem 0 6rem 0;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.detail-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.detail-main-info h1 {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-address {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-silver);
+  font-size: 1.6rem;
+}
+
+.detail-address svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-gold);
+}
+
+.detail-pricing-box {
+  text-align: right;
+}
+
+.detail-price-label {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.detail-price-val {
+  font-family: var(--font-headings);
+  font-size: 4rem;
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+.detail-price-sqft {
+  font-size: 1.3rem;
+  color: var(--color-light-gray);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* 4. Showcase Gallery Slider on Details Page */
+.detail-showcase-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  margin: 6rem 0;
+}
+
+.detail-gallery-main {
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-glass);
+}
+
+.detail-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.detail-gallery-img.active {
+  opacity: 1;
+}
+
+.gallery-arrows {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.gallery-arrow-btn {
+  width: 50px;
+  height: 50px;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--border-glass);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.8rem;
+  transition: var(--transition-fast);
+}
+
+.gallery-arrow-btn:hover {
+  background: var(--color-gold);
+  color: var(--color-primary-black);
+  border-color: var(--color-gold);
+}
+
+/* 5. Details Specs Grid */
+.detail-specs-panel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  padding: 4rem;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  margin-bottom: 6rem;
+}
+
+.detail-spec-card {
+  text-align: center;
+  border-right: 1px solid var(--border-glass);
+}
+
+.detail-spec-card:last-child {
+  border-right: none;
+}
+
+.detail-spec-card svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--color-gold);
+  margin-bottom: 1.5rem;
+}
+
+.detail-spec-card h4 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var(--color-silver);
+  margin-bottom: 0.5rem;
+}
+
+.detail-spec-card p {
+  font-size: 1.8rem;
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+/* 6. Layout description & booking layout */
+.detail-content-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 6rem;
+}
+
+.detail-desc-block {
+  margin-bottom: 6rem;
+}
+
+.detail-desc-block h3 {
+  font-size: 2.8rem;
+  margin-bottom: 2.5rem;
+  color: var(--color-gold-light);
+}
+
+.detail-desc-text {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: var(--color-silver);
+}
+
+/* Amenities List Grid */
+.amenities-section {
+  margin-bottom: 6rem;
+}
+
+.amenities-section h3 {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.amenity-card {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 2.2rem;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+}
+
+.amenity-icon-box {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid var(--border-glass-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.amenity-icon-box svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.amenity-name {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-white);
+}
+
+/* Nearby Landmarks Table */
+.nearby-section {
+  margin-bottom: 6rem;
+}
+
+.nearby-section h3 {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+}
+
+.nearby-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.nearby-table th,
+.nearby-table td {
+  padding: 2rem;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.nearby-table th {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  letter-spacing: 0.1em;
+}
+
+.nearby-table td {
+  font-size: 1.5rem;
+}
+
+.nearby-cat-badge {
+  padding: 0.4rem 1.2rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border-radius: 0;
+  background: var(--bg-glass-heavy);
+  border: 1px solid var(--border-glass);
+  color: var(--color-silver);
+}
+
+.nearby-dist-val {
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+/* Map Section */
+.location-map-section h3 {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+}
+
+.iframe-map-wrapper {
+  height: 400px;
+  border: 1px solid var(--border-glass);
+}
+
+.iframe-map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: invert(90%) hue-rotate(180deg) grayscale(100%);
+}
+
+.map-buttons-row {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* 7. Site Visit Booking Sidebar Widget */
+.booking-widget-container {
+  position: sticky;
+  top: 100px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass-gold);
+  padding: 4rem;
+  height: fit-content;
+  box-shadow: var(--shadow-glass);
+}
+
+.booking-widget-title {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.booking-widget-subtitle {
+  font-size: 1.3rem;
+  color: var(--color-silver);
+  text-align: center;
+  margin-bottom: 4rem;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .filter-grid-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .btn-filter-reset {
+    grid-column: span 2;
+  }
+  .detail-showcase-container {
+    grid-template-columns: 1fr;
+  }
+  .detail-gallery-main {
+    height: 400px;
+  }
+  .detail-specs-panel {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .detail-spec-card {
+    border-right: none;
+    padding: 1.5rem 0;
+  }
+  .detail-spec-card:nth-child(2n) {
+    border-right: none;
+  }
+  .detail-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .booking-widget-container {
+    position: static;
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+  .detail-main-info h1 {
+    font-size: 3.5rem;
+  }
+  .detail-pricing-box {
+    text-align: left;
+  }
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+  .nearby-table th,
+  .nearby-table td {
+    padding: 1.2rem;
+    font-size: 1.3rem;
+  }
+}

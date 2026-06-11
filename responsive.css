@@ -1,0 +1,147 @@
+/* css/responsive.css */
+/* Luxury Real Estate - Global Media Queries & Fluid Overrides */
+
+/* 1. Large Laptops / Desktops */
+@media (max-width: 1400px) {
+  :root {
+    --container-width: 1200px;
+  }
+  
+  .section-title {
+    font-size: 4rem;
+  }
+}
+
+/* 2. Small Laptops / Landscape Tablets */
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 6rem 2rem;
+  }
+  
+  .section-title {
+    font-size: 3.6rem;
+  }
+  
+  .section {
+    padding: var(--section-padding);
+  }
+}
+
+/* 3. Portrait Tablets */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 5rem 1.5rem;
+  }
+
+  body {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .section-title-wrapper {
+    margin-bottom: 4rem;
+  }
+
+  .btn {
+    padding: 1.2rem 2.8rem;
+    font-size: 1.2rem;
+  }
+
+  /* Sticky Header modifications */
+  .header {
+    padding: 2rem 0;
+  }
+  
+  .logo-text {
+    font-size: 2rem;
+  }
+  
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Floating action button tweaks for smaller touch targets */
+  .float-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .float-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .floating-actions {
+    bottom: 2rem;
+    right: 2rem;
+    gap: 1rem;
+  }
+}
+
+/* 4. Small Mobile Phones */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2.6rem;
+  }
+  
+  .logo-text {
+    font-size: 1.8rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .footer-bottom-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+
+/* 5. Safe Area Insets for Modern iPhone Screen Cuts */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .floating-actions {
+    bottom: calc(2rem + env(safe-area-inset-bottom));
+    right: calc(2rem + env(safe-area-inset-right));
+  }
+  
+  .header {
+    padding-top: calc(2.5rem + env(safe-area-inset-top));
+  }
+}
+
+/* 6. Print Stylesheet for Site Reports and BOQ Printing */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .header,
+  .footer,
+  .floating-actions,
+  .floating-social-bar,
+  .btn,
+  .filter-section,
+  .booking-widget-container {
+    display: none !important;
+  }
+  .admin-sidebar {
+    display: none !important;
+  }
+  .admin-main-container {
+    margin-left: 0 !important;
+    padding: 0 !important;
+  }
+  .detail-specs-panel {
+    border: 1px solid #ccc;
+    background: transparent;
+    color: black;
+  }
+}

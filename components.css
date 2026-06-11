@@ -1,0 +1,728 @@
+/* css/components.css */
+/* Luxury Real Estate - Reusable UI Components */
+
+/* 1. Buttons (Luxury & Minimalist Styles) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 3.5rem;
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-primary-black);
+  border: 1px solid var(--color-gold);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--color-gold);
+  box-shadow: 0 0 20px var(--color-gold-glow);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid var(--color-light-gray);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn-gold-outline {
+  background: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+}
+
+.btn-gold-outline:hover {
+  background: var(--color-gold);
+  color: var(--color-primary-black);
+  box-shadow: 0 0 20px var(--color-gold-glow);
+}
+
+.btn-text {
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: var(--color-gold);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.btn-text::after {
+  content: '→';
+  transition: var(--transition-fast);
+}
+
+.btn-text:hover::after {
+  transform: translateX(5px);
+}
+
+/* 2. Brand Preloader Screen */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--color-primary-black);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+}
+
+.preloader-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: preloaderLogoFadeIn 1s forwards 0.2s;
+}
+
+@keyframes preloaderLogoFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preloader-logo {
+  width: 80px;
+  height: 80px;
+  fill: var(--color-gold);
+}
+
+.preloader-brand {
+  font-family: var(--font-headings);
+  font-size: 3.2rem;
+  letter-spacing: 0.2em;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.preloader-brand span {
+  color: var(--color-gold);
+}
+
+.preloader-tagline {
+  font-size: 1.3rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-silver);
+  margin-top: -1rem;
+}
+
+.preloader-bar-container {
+  width: 250px;
+  height: 2px;
+  background: var(--color-mid-gray);
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.preloader-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--color-gold);
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: preloaderBarProgress 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes preloaderBarProgress {
+  to {
+    width: 100%;
+  }
+}
+
+/* 3. Section Titles */
+.section-title-wrapper {
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.section-title {
+  font-size: 4.5rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.section-title-wrapper.left-align {
+  text-align: left;
+}
+
+.section-title-wrapper.left-align .title-line {
+  margin-left: 0;
+}
+
+.title-line {
+  width: 60px;
+  height: 1px;
+  background: var(--color-gold);
+  margin: 0 auto;
+}
+
+/* 4. Luxury Glass Property Card */
+.property-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: 0;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.property-card:hover {
+  background: var(--bg-glass-heavy);
+  border-color: var(--border-glass-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glass);
+}
+
+.property-img-wrapper {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.property-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.property-card:hover .property-img {
+  transform: scale(1.06);
+}
+
+.property-status-badge {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  padding: 0.6rem 1.6rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid var(--border-glass);
+  color: var(--color-white);
+  backdrop-filter: var(--backdrop-blur);
+}
+
+.property-status-badge.available {
+  border-color: rgba(37, 211, 102, 0.4);
+  color: #25D366;
+}
+
+.property-status-badge.limited-availability {
+  border-color: rgba(212, 175, 55, 0.5);
+  color: var(--color-gold);
+}
+
+.property-status-badge.sold-out {
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #EF4444;
+}
+
+.property-status-badge.upcoming {
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #3B82F6;
+}
+
+.property-info {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.property-location {
+  font-size: 1.3rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.8rem;
+}
+
+.property-title {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.property-desc {
+  font-size: 1.4rem;
+  color: var(--color-silver);
+  margin-bottom: 2.5rem;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.property-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
+  padding: 2rem 0;
+  margin-bottom: 2.5rem;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-label {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--color-light-gray);
+  letter-spacing: 0.1em;
+}
+
+.spec-val {
+  font-size: 1.4rem;
+  color: var(--color-white);
+  font-weight: 400;
+}
+
+.property-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.property-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--color-light-gray);
+}
+
+.price-val {
+  font-family: var(--font-headings);
+  font-size: 2rem;
+  color: var(--color-gold-light);
+}
+
+/* 5. Crew Member Card */
+.crew-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.crew-card:hover {
+  background: var(--bg-glass-heavy);
+  border-color: var(--border-glass-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glass);
+}
+
+.crew-img-wrapper {
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+}
+
+.crew-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.crew-card:hover .crew-img {
+  transform: scale(1.05);
+}
+
+.crew-info {
+  padding: 2.5rem;
+  position: relative;
+  background: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.95) 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.crew-name {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.crew-role {
+  font-size: 1.3rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.crew-experience {
+  font-size: 1.2rem;
+  color: var(--color-silver);
+  margin-bottom: 1.5rem;
+}
+
+.crew-skills {
+  font-size: 1.3rem;
+  color: var(--color-silver);
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* Standard property for compatibility */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.crew-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.crew-social a {
+  color: var(--color-light-gray);
+  transition: var(--transition-fast);
+}
+
+.crew-social a:hover {
+  color: var(--color-gold);
+}
+
+.crew-social svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* 6. Testimonial Card */
+.testimonial-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  padding: 5rem;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.testimonial-card::before {
+  content: '“';
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  font-family: var(--font-headings);
+  font-size: 12rem;
+  color: rgba(212, 175, 55, 0.08);
+  line-height: 1;
+}
+
+.test-rating {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.test-rating svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-gold);
+}
+
+.test-text {
+  font-size: 1.8rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--color-white);
+  margin-bottom: 3.5rem;
+  font-weight: 300;
+}
+
+.test-author-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.test-avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-glass-gold);
+}
+
+.test-meta h4 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.test-meta span {
+  font-size: 1.3rem;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+}
+
+/* 7. Interactive Form Elements */
+.luxury-form {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  padding: 5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1.8rem 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-glass);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.form-label {
+  position: absolute;
+  top: 1.8rem;
+  left: 0;
+  font-size: 1.5rem;
+  color: var(--color-silver);
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.form-input:focus,
+.form-input:valid {
+  border-bottom-color: var(--color-gold);
+}
+
+.form-input:focus ~ .form-label,
+.form-input:valid ~ .form-label {
+  top: -1rem;
+  font-size: 1.2rem;
+  color: var(--color-gold);
+}
+
+.form-input[type="date"] ~ .form-label,
+.form-input[type="time"] ~ .form-label,
+select.form-input ~ .form-label {
+  top: -1rem;
+  font-size: 1.2rem;
+  color: var(--color-gold);
+}
+
+select.form-input {
+  cursor: pointer;
+}
+
+select.form-input option {
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+}
+
+/* Validation Feedback styles */
+.form-error {
+  position: absolute;
+  bottom: -2.2rem;
+  left: 0;
+  font-size: 1.2rem;
+  color: #EF4444;
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+
+.form-group.has-error .form-input {
+  border-bottom-color: #EF4444;
+}
+
+.form-group.has-error .form-error {
+  opacity: 1;
+}
+
+/* 8. Lightbox Overlay Modal */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(15px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+}
+
+#lightbox.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 3.5rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.lightbox-close:hover {
+  color: var(--color-gold);
+}
+
+.lightbox-content-wrapper {
+  max-width: 90%;
+  max-height: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  border: 1px solid var(--border-glass);
+}
+
+.lightbox-caption {
+  font-family: var(--font-headings);
+  font-size: 2.2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  color: var(--color-white);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-size: 2rem;
+}
+
+.lightbox-nav:hover {
+  background: var(--color-gold);
+  color: var(--color-primary-black);
+  border-color: var(--color-gold);
+}
+
+.lightbox-prev {
+  left: -80px;
+}
+
+.lightbox-next {
+  right: -80px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+  .luxury-form {
+    padding: 3rem 2rem;
+  }
+  .lightbox-prev {
+    left: 2rem;
+    bottom: -80px;
+    top: auto;
+  }
+  .lightbox-next {
+    right: 2rem;
+    bottom: -80px;
+    top: auto;
+  }
+  .lightbox-content-wrapper {
+    margin-bottom: 80px;
+  }
+}
